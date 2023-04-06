@@ -46,5 +46,40 @@ Or as a list:
 ---
 
 ## Gameplay
+First, each three deck of cards should be shuffled and then a single card out of each deck will be put aside in a sealed envelope. Then the rest of the cards should be shuffled together and then dealt to the players. Due to the difference in the number of the players, based on this table, each player can receive varied different number of cards:
+
+| Number of Players | Number of Cards |
+| ----------------- | --------------- |
+| 3                 | 6               |
+| 4                 | 5               |
+| 5                 | 4               |
+| 6                 | 3               | 
+
+The players will be placed randomly and the round starts from the first character. The first player tosses their dice and based on the sum of their numbers, can enter one of the other rooms. For the selection of the rooms, they must consider these:
+1. If the sum is odd, the player can enter an odd number room and vise versa
+2. Players must change their rooms and can not stay in one room
+3. Players are not allowed to go to the neighbor rooms. For instance, if they are currently in room no.6, rooms 5 and 7 won’t be available. (Room no.1 is not considered a neighbor)
+
+With the player’s entry in of the rooms, he/she must guess and choose a character and a tool from the range of the cards. The current player now can start asking from others whether his/her guess is valid or not. This process will be continued till someone confirms that they have one of the cards mentioned earlier. The rest of the players will not be informed about the identity of that card, but only notified about the availability of it.
+
+If at the end of the round, our player concludes that a final answer can be announced, they can declare the murderer, the tool and the room they suspect, else they can pass on. If their answer is correct, they shall win the game, but if not, they will be removed from the game and can only answer the other’s questions.
+
+> ### Note
+> As soon as one of the accuser’s cards is told to be possessed, the asking procedure will be stopped and the game will move on to it’s next phase.
+
+### Current Build
+At this point, there isn’t a multi-player version of the game. No other human players will join and the user is only going to play against non-playable characters. As a matter of fact, the user is only allowed to win and not the computer. Yet, he/she can lose if they finalize their wrong accusation.
+
+After writing the whole project, these are the end results regarding the structure of the program:
+1. An estimated number of 5’300 lines of code 
+2. There are 3 classes in total:
+    - MainClass
+    - Cards
+    - DeckOfCardsTotal
+3. About 20 note worthy functions
+4. Imported 6 packages in total
+
+---
+
 ## My Approach
 ## Alternative Outcome
