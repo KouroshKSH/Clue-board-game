@@ -79,6 +79,64 @@ After writing the whole project, these are the end results regarding the structu
 3. About 20 note worthy functions
 4. Imported 6 packages in total
 
+The code is mainly consisted of the `MainClass` and the object aspect of the initial approach is fairly used in the first segment of the project. In the beginning, the `Cards` class is written to construct a simple structure of any given card.
+```java
+public class Cards
+{
+  private final String infoOnCard;
+  public Cards(String infoOnCard)
+  {
+    this.infoOnCard = infoOncard;
+  }
+  
+  @Override
+  public String toString()
+  {
+    return infoOnCard
+  }
+}
+```
+
+After that, the `DeckOfCardsTotal` class is made upon the previous mentioned class. The entities in this class are based on the `Cards` class. A large amount of the identities are written here, as they shall be the reference point of the code.
+```java
+public class DeckOfCardsTotal
+{
+    SecureRandom random = new SecureRandom();
+
+    private final int cardsTotalNum = 21;
+    private final int charactersTotalNum = 6;
+    private final int toolsTotalNum = 6;
+    private final int roomsTotalNum = 9;
+
+    public String[] cardsInfoOrigin = {"Dr.Orchid", "Mr.Green", "Col.Mustard", "Ms.Peacock", "Prof.Plum", "Mr.Scarlet",
+            "wrench", "rope", "steel bar", "knife", "shovel", "razor",
+            "piano room", "greenhouse", "billiard's room", "library", "study room", "hall", "bedroom", "dinning", "kitchen"};
+
+    public String[] charactersArrayOfNames = {"Dr.Orchid", "Mr.Green", "Col.Mustard",
+            "Ms.Peacock", "Prof.Plum", "Mr.Scarlet"};
+
+    public String[] toolsArrayOfNames = {"wrench", "rope", "steel bar",
+            "knife", "shovel", "razor"};
+
+    public String[] roomsArrayOfNames = {"piano room", "greenhouse", "billiard's room",
+            "library", "study room", "hall",
+            "bedroom", "dinning", "kitchen"};
+
+    private Cards[] allOfCardsList = new Cards[cardsTotalNum - 3];
+    private Cards[] charactersNameList = new Cards[charactersTotalNum];
+    private Cards[] toolsNameList = new Cards[toolsTotalNum];
+    private Cards[] roomsNameList = new Cards[roomsTotalNum];
+
+    private int currentCard = 0;
+
+    private String murdererChar = randSelectMurderer();
+    private String murderTool = randSelectMurderTool();
+    private String murderRoom = randSelectMurderRoom();
+
+    public String[] stringBased18Cards = new String[18];
+}
+```
+
 ---
 
 ## My Approach
