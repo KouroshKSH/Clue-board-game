@@ -137,6 +137,39 @@ public class DeckOfCardsTotal
 }
 ```
 
+At first, we have a set of 21 cards which can be divided into 3 parts (characters, tools & rooms), and then the functions listed below randomly choose the murder’s settings:
+1. `randSelectMurderer`
+2. `randSelectMurderTool` 
+3. `randSelectMurderRoom`
+
+These functions store string based variables in their respected directories.
+```java
+public String randSelectMurderer()
+    {
+        String[] charactersArrayOfNames = {"Dr.Orchid", "Mr.Green", "Col.Mustard",
+                "Ms.Peacock", "Prof.Plum", "Mr.Scarlet"};
+        int randNum = random.nextInt(charactersArrayOfNames.length);
+        return charactersArrayOfNames[randNum];
+    }
+
+    public String randSelectMurderTool()
+    {
+        String[] toolsArrayOfNames = {"wrench", "rope", "steel bar",
+                "knife", "shovel", "razor"};
+        int randNum = random.nextInt(toolsArrayOfNames.length);
+        return toolsArrayOfNames[randNum];
+    }
+
+    public String randSelectMurderRoom()
+    {
+        String[] roomsArrayOfNames = {"piano room", "greenhouse", "billiard's room",
+                "library", "study room", "hall",
+                "bedroom", "dinning", "kitchen"};
+        int randNum = random.nextInt(roomsArrayOfNames.length);
+        return roomsArrayOfNames[randNum];
+    }
+```
+
 ---
 
 ## My Approach
