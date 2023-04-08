@@ -1,4 +1,4 @@
-# Clue board game
+# Clue Board Game
 Cluedo, known as Clue in North America, is a murder mystery game that was devised in 1943 by Anthony E. Pratt.
 
 The object of the game is to determine who murdered the game's victim, where the crime took place, and which weapon was used. Each player assumes the role of one of the suspects and attempts to deduce the correct answer by strategically moving around a game board representing the rooms of a mansion and collecting clues about the circumstances of the murder from the other players. In this version of the game, Mr. Black has been murdered by one of the tools in the game in an unknown room.
@@ -168,6 +168,57 @@ public String randSelectMurderer()
         int randNum = random.nextInt(roomsArrayOfNames.length);
         return roomsArrayOfNames[randNum];
     }
+```
+
+After the selection of those 3 random cards for the murder, an `ArrayList` is made in order to store the remaining cards and later removing those 3 initial cards.
+```java
+ArrayList<String> DynamicCardsInfo = new ArrayList<String>(21);
+for (int count = 0; count < 21; count++)
+{
+    DynamicCardsInfo.add(count, cardsInfoOrigin[count]);
+}
+//now we remove the murder elements from the array list
+DynamicCardsInfo.remove(murdererChar);
+DynamicCardsInfo.remove(murderTool);
+DynamicCardsInfo.remove(murderRoom);
+```
+
+Now we store the elements of `DynamicCardsInfo` in a new 18 sized array.
+```java
+String[] cardsInfoNew = new String[18];
+for (int count = 0; count < DynamicCardsInfo.size(); count++)
+{
+    cardsInfoNew[count] = DynamicCardsInfo.get(count);
+}
+```
+
+Then, the `cardsInfoNew` array will be shuffled with [Fisher Yates's algorithm](https://bost.ocks.org/mike/shuffle/), which is an algorithm for randomly shuffling a finite sequence of elements. The algorithm works by iterating through the sequence from the end to the beginning, swapping each element with a randomly chosen element that comes before it in the sequence.
+```java
+for (int count = cardsInfoNew.length - 1; count > 0; count--)
+{
+    int var = random.nextInt(count + 1);
+    String temp = cardsInfoNew[count];
+    cardsInfoNew[count] = cardsInfoNew[var];
+    cardsInfoNew[var] = temp;
+}
+```
+
+> #### Fisher Yate's Algorithm
+> The algorithm has two steps:
+> 1. Starting from the last element of the sequence, swap it with a randomly chosen element from the sequence that comes before it (including itself).
+> 2. Move to the next-to-last element of the sequence and repeat step 1, swapping the element with a randomly chosen element from the sequence that comes before it (including itself). Continue this process, moving backwards through the sequence until the first element is reached.
+
+Later, the cards get stored in ‘stringBased18Cards’ string array to be dealt with.
+```java
+for (int counter = 0; counter < cardsInfoNew.length; counter++)
+{
+    allOfCardsList[counter] = new Cards(cardsInfoNew[counter%18]);
+}
+
+for (int count = 0; count < stringBased18Cards.length; count++)
+{
+    stringBased18Cards[count] = String.valueOf(allOfCardsList[count]);
+}
 ```
 
 ---
