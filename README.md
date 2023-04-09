@@ -221,6 +221,39 @@ for (int count = 0; count < stringBased18Cards.length; count++)
 }
 ```
 
+After all of these, the rest of the program will take place in our main class and about 90% of the whole project will be resumed there.
+```java
+public class MainClass
+{
+    private static final int cardsTotalNum = 21;
+    static final SecureRandom random = new SecureRandom();
+    public static int dice1, dice2, resultOfDice;
+    public static String[] charactersArrayOfNames = {"Dr.Orchid", "Mr.Green", "Col.Mustard",
+            "Ms.Peacock", "Prof.Plum", "Mr.Scarlet"};
+    public static String[] toolsArrayOfNames = {"wrench", "rope", "steel bar",
+            "knife", "shovel", "razor"};
+    public static String[] roomsArrayOfNames = {"piano room", "greenhouse", "billiard's room",
+            "library", "study room", "hall",
+            "bedroom", "dinning", "kitchen"};
+    public static HashMap<Integer, String> roomsStringAndIntMap = new HashMap<Integer, String>(9);
+}
+```
+
+Minus the main required variables, there is `roomsStringAndIntMap` HashMap that is responsible for the task of assigning integer values to string based names of the rooms, and ease the process of working with the names of those rooms later.
+```java
+roomsStringAndIntMap.put(1, "hall");
+roomsStringAndIntMap.put(2, "pinanoroom");
+roomsStringAndIntMap.put(3, "greenhouse");
+roomsStringAndIntMap.put(4, "studyroom");
+roomsStringAndIntMap.put(5, "billiard'sroom");
+roomsStringAndIntMap.put(6, "bedroom");
+roomsStringAndIntMap.put(7, "dinning");
+roomsStringAndIntMap.put(8, "library");
+roomsStringAndIntMap.put(9, "kitchen");
+```
+
+Now, the first stage of the game begins, which is entering the number of the participants and starting the game. Unfortunately, the game can recognize the user only as `player1` due to some issues that occurred later in the code, such as jumping over user’s turn or not verifying the user as a human being and letting he win the game and etc.
+
 ---
 
 ## My Approach
