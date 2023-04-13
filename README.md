@@ -254,6 +254,16 @@ roomsStringAndIntMap.put(9, "kitchen");
 
 Now, the first stage of the game begins, which is entering the number of the participants and starting the game. Unfortunately, the game can recognize the user only as `player1` due to some issues that occurred later in the code, such as jumping over user’s turn or not verifying the user as a human being and letting he win the game and etc.
 
+Then, a deck of cards will be made from `DeckOfCardsTotal` class and it is responsible for holding the answers to the game. The `myDeck` list will then be shuffled and randomized.
+```java
+//for the initial shuffling of the cards
+myDeck.shuffleCharCards();
+myDeck.shuffleToolCards();
+myDeck.shuffleRoomCards();
+```
+
+
+
 ---
 
 ## My Approach
