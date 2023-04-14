@@ -262,6 +262,25 @@ myDeck.shuffleToolCards();
 myDeck.shuffleRoomCards();
 ```
 
+From there, the settings of the murder will be stored in the first three indexes of the `correctAnswer` array.
+```java
+//created this String array for holding the case of murder
+String[] correctAnswer = new String[3];
+correctAnswer[0] = myDeck.getMurdererChar();
+correctAnswer[1] = myDeck.getMurderTool();
+correctAnswer[2] = myDeck.getMurderRoom();
+```
+
+The remaining cards will now be shuffled once more to continue with the 18 set of cards for the dealing part of the game.
+```java
+myDeck.shuffleArraySize18();
+//this 18 sized String array will store the 18 cards and will be used later
+String[] stringArrayOfCards = new String[18];
+for (int i  = 0; i < stringArrayOfCards.length; i++)
+{
+    stringArrayOfCards[i] = myDeck.getStringBased18Cards();
+}
+```
 
 
 ---
