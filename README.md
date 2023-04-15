@@ -282,6 +282,27 @@ for (int i  = 0; i < stringArrayOfCards.length; i++)
 }
 ```
 
+From here, the game is divided into 4 different modes of player base. (ranging from 3 to 6) Each case represents one of those modes, such as `case 3 :` in this example. For simplicity purposes, only the first case will be detailed and shown in this document as the rest are simply an extended version of this mode. For the first part, there will be 3 string based arrays made to represent the deck of cards for our three players. And the cards will be given to all of the players by using for-loops.
+```java
+ switch (participantsTotalNum)
+        {
+            case 3:
+                String[] player1Cards3 = new String[6];
+                String[] player2Cards3 = new String[6];
+                String[] player3Cards3 = new String[6];
+                for (int count = 0; count < 6; count++)
+                {
+                    player1Cards3[count] = stringArrayOfCards[count];
+                }
+                for (int count = 6; count < 12; count++)
+                {
+                    player2Cards3[count - 6] = stringArrayOfCards[count];
+                }
+                for (int count = 12; count < 18; count++)
+                {
+                    player3Cards3[count - 12] = stringArrayOfCards[count];
+                }
+```
 
 ---
 
