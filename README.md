@@ -304,6 +304,37 @@ From here, the game is divided into 4 different modes of player base. (ranging f
                 }
 ```
 
+After all of the players get their cards, they will be randomly sent to their rooms.
+```java
+ int startingRoomPlayer1Game3 = random.nextInt(9) + 1;
+System.out.println("Player1's starting room is : " +
+        startingRoomPlayer1Game3);
+int startingRoomPlayer2Game3 = random.nextInt(9) + 1;
+System.out.println("Player2's starting room is : " +
+        startingRoomPlayer2Game3);
+int startingRoomPlayer3Game3 = random.nextInt(9) + 1;
+System.out.println("Player3's starting room is : " +
+        startingRoomPlayer3Game3);
+```
+
+Then the next stage of the game will initialize, which is the round/turn mode and is written in a while-loop. This loop will continue till the end game condition is turned true, which is either our user’s winning or losing state. Here, based on the order of the turns, each player’s turn will be announced and then those two dices will come into play.
+```java
+boolean endOfGameCon3 = false;
+//game will be played until user wins
+while (!(endOfGameCon3))
+{
+    System.out.println("Player1's turn : rolling dice");
+    dice1 = random.nextInt(6);
+    dice2 = random.nextInt(6);
+    resultOfDice = (dice1 + dice2)%2;
+    if (resultOfDice == 1)
+    {
+        System.out.println("odd number");
+    }else{
+        System.out.println("even number");
+    }
+```
+
 ---
 
 ## My Approach
