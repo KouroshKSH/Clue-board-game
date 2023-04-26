@@ -317,7 +317,7 @@ System.out.println("Player3's starting room is : " +
         startingRoomPlayer3Game3);
 ```
 
-Then the next stage of the game will initialize, which is the round/turn mode and is written in a while-loop. This loop will continue till the end game condition is turned true, which is either our user’s winning or losing state. Here, based on the order of the turns, each player’s turn will be announced and then those two dices will come into play.
+Then the next stage of the game will initialize, which is the round/turn mode and is written in a while-loop. This loop will continue till the end game condition is turned true, which is either our user’s winning or losing state. Here, based on the order of the turns, each player’s turn will be announced and then those two dice will come into play.
 ```java
 boolean endOfGameCon3 = false;
 //game will be played until user wins
@@ -338,4 +338,10 @@ while (!(endOfGameCon3))
 ---
 
 ## My Approach
+
+---
+
 ## Alternative Outcome
+There have been a lot of lessons learned along the way. The outcome of this project would be very different if it were to be developed again. One of the major aspects of it would be the AI, but as a matter of fact, the size of the code would be reduced as well.
+
+An alternative approach would be using a more object oriented style of programming. Using more aspects of OOP such as inheritance, polymorphism and etc… would help the fluidity of the code. This project was helpful in different ways, from teaching the importance of planning and writing down the basics, all the way to consistency and stability of working on something. Taking huge breaks was one of the major problems that hindered the efficiency of this journey, hence sticking to a regular plan that would encourage the developer to interact with the project daily would definitely better the outcome of this game.
